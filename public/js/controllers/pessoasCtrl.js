@@ -7,57 +7,62 @@ var Message = {
 !function (app) {
     app.controller("appCtrl", ["$scope", function () {
     }]).controller("personCtrl", ["$scope", "$log", function ($scope) {
-        $scope.grid = [], $scope.grid.persons = new kendo.data.DataSource({
-            pageSize: 10,
-            transport: {
-                read: {url: "Persons/All", dataType: "json"},
-                update: {
-                    url: "Persons/Update", dataType: "json", complete: function () {
-                        Message.open("The user update", "success"), $scope.grid.persons.read()
+        $scope.grid = [],
+            $scope.grid.persons = new kendo.data.DataSource({
+                pageSize: 10,
+                transport: {
+                    read: {url: "Persons/All", dataType: "json"},
+                    update: {
+                        url: "Persons/Update", dataType: "json", complete: function () {
+                            Message.open("Usuário Atualizado", "successo"), $scope.grid.persons.read()
+                        }
+                    },
+                    destroy: {
+                        url: "Persons/Delete", dataType: "json", complete: function () {
+                            Message.open("The user deleted successofull", "successo"), $scope.grid.persons.read()
+                        }
+                    },
+                    create: {
+                        url: "Persons/Create", dataType: "json", complete: function () {
+                            Message.open("The user added successofull", "successo"), $scope.grid.persons.read()
+                        }
+                    },
+                    parameterMap: function (data, type) {
+                        return "read" !== type ? (data.birthday = kendo.toString(new Date(data.birthday), "yyyy/MM/dd"), data) : void 0
                     }
                 },
-                destroy: {
-                    url: "Persons/Delete", dataType: "json", complete: function () {
-                        Message.open("The user deleted successfull", "success"), $scope.grid.persons.read()
+                schema: {
+                    model: {
+                        id: "id",
+                        fields: {
+                            id: {type: "number", editable: !1},
+                            first_name: {type: "string"},
+                            last_name: {type: "string"},
+                            birthday: {type: "date"}
+                        }
                     }
-                },
-                create: {
-                    url: "Persons/Create", dataType: "json", complete: function () {
-                        Message.open("The user added successfull", "success"), $scope.grid.persons.read()
-                    }
-                },
-                parameterMap: function (data, type) {
-                    return "read" !== type ? (data.birthday = kendo.toString(new Date(data.birthday), "yyyy/MM/dd"), data) : void 0
                 }
+            }),
+            $scope.grid.columns = [{field: "id", title: "&nbsp", width: "50px"}, {
+                field: "first_name",
+                title: "Primeiro Nome"
             },
-            schema: {
-                model: {
-                    id: "id",
-                    fields: {
-                        id: {type: "number", editable: !1},
-                        first_name: {type: "string"},
-                        last_name: {type: "string"},
-                        birthday: {type: "date"}
-                    }
-                }
-            }
-        }), $scope.grid.columns = [{field: "id", title: "&nbsp", width: "50px"}, {
-            field: "first_name",
-            title: "First Name"
-        }, {field: "last_name", title: "Last Name"}, {
-            field: "birthday",
-            title: "Birthday",
-            format: "{0:MM/dd/yyyy}"
-        }, {command: ["edit", "destroy"], width: "200px"}], $scope.grid.options = {
-            columns: $scope.grid.columns,
-            pageable: {refresh: !0, pageSizes: [10, 20, 50]},
-            selectable: "row",
-            sortable: !0,
-            reorderable: !0,
-            filterable: {extra: !1},
-            editable: {mode: "popup"},
-            toolbar: ["create"]
-        }, $scope.onSelection = function () {
+                {field: "last_name", title: "Ultimo Nome"}, {
+                    field: "birthday",
+                    title: "Aniversario",
+                    format: "{0:MM/dd/yyyy}"
+                }, {command: ["edit", "destroy"], width: "200px"}],
+
+            $scope.grid.options = {
+                columns: $scope.grid.columns,
+                pageable: {refresh: !0, pageSizes: [10, 20, 50]},
+                selectable: "row",
+                sortable: !0,
+                reorderable: !0,
+                filterable: {extra: !1},
+                editable: {mode: "popup"},
+                toolbar: ["create"]
+            }, $scope.onSelection = function () {
         }
     }])
 }(angular.module("app", ["kendo.directives"]));
