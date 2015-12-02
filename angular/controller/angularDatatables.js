@@ -1,6 +1,6 @@
 var app = angular.module('datatablesDirectives', ['datatablesDirectives']);
 
-app.controller('ExampleCtrl', function ($scope, $window, $location) {
+app.controller('DatatablesCtrl', function ($scope, $window, $location) {
 
 	$scope.idCB = function (data) {
 		if (data.id > 3) {

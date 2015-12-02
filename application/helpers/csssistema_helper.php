@@ -21,7 +21,7 @@
 
     <script src="<?php echo base_url();?>angular/controller/damandasController.js"></script>
     <script src="<?php echo base_url();?>angular/controller/pedidosController.js"></script>
-    <script src="<?php echo base_url();?>angular/controller/angular.datatables.js"></script>
+    <script src="<?php echo base_url();?>angular/controller/angularDatatables.js"></script>
 
 
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
