@@ -1,33 +1,52 @@
-<!doctype html>
-<html lang="en" ng-app="app">
+
 <head>
-    <meta charset="UTF-8">
-    <title>CodeIgniter</title>
-    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Grupo Natural</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="<?php echo base_url();?>angular/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="<?php echo base_url();?>angular/dist/css/AdminLTE.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>angular/dist/css/main.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>angular/dist/css/skins/skin-blue.min.css">
 
-    <!-- jQuery -->
-    <!--  <script type="text/javascript" src="codAng/public/lib/jquery/jquery.min.js"></script>-->
-    <script src="<?php echo base_url();?>public/lib/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url();?>angular/lib/angular.js"></script>
+    <script src="<?php echo base_url();?>angular/lib/angular-route.min.js"></script>
 
-    <!-- Kendo -->
-    <script type="text/javascript" src="<?php echo base_url();?>public/lib/kendo-ui/js/kendo.web.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>public/lib/kendo-ui/styles/kendo.common-bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>public/lib/kendo-ui/styles/kendo.bootstrap.min.css"/>
-
-    <!-- Angular -->
-    <script type="text/javascript" src="<?php echo base_url();?>public/lib/angular/angular.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>public/js/controllers/pessoasCtrl.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>public/lib/angular-kendo-ui/build/angular-kendo.min.js"></script>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>public/lib/bootstrap-css/css/bootstrap.min.css"/>
-
-    <!-- Messenger -->
-    <script type="text/javascript" src="<?php echo base_url();?>public/lib/messenger/build/js/messenger.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>public/lib/messenger/build/js/messenger-theme-flat.js"></script>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>public/lib/messenger/build/css/messenger.css"/>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>public/lib/messenger/build/css/messenger-theme-air.css"/>
+    <script src="<?php echo base_url();?>angular/controller/damandasController.js"></script>
+    <script src="<?php echo base_url();?>angular/controller/pedidosController.js"></script>
+    <script src="<?php echo base_url();?>angular/controller/angular.datatables.js"></script>
 
 
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="<?php echo base_url(); ?>angular/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="<?php echo base_url(); ?>angular/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>angular/dist/js/app.min.js"></script>
+    <script src="<?php echo base_url(); ?>angular/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url(); ?>angular/plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>angular/dist/js/testeTabela.js"></script>
+
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/1.9.4/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="angular/controller/angular.datatables.js"></script>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="//cdn.datatables.net/plug-ins/505bef35b56/integration/bootstrap/3/dataTables.bootstrap.css">
+    <script type="text/javascript"
+            src="//cdn.datatables.net/plug-ins/505bef35b56/integration/bootstrap/3/dataTables.bootstrap.js"></script>
 </head>
+
+
+
