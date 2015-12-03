@@ -1,0 +1,25 @@
+<div class="content-wrapper" ng-controller="demandasController">
+    <section class="content-header"><h1>Painel de Controle</h1></section>
+    <section class="content">
+        <div class="row">
+            <div class="col-lg-2 col-xs-6" ng-repeat="botoes in botoesTopo">
+                <div class="small-box bg-{{botoes.cor}}">
+                    <span class="small-box-footer"><strong>{{botoes.nome}}</strong></span>
+
+                    <div class="inner"><h3>{{botoes.pedidos}}</h3>
+
+                        <p>Pedidos</p></div>
+                    <div class="icon"><i class="ion ion-pie-graph"></i></div>
+                    <a href="" data-toggle="modal" data-target="#myModal" class="small-box-footer">Adicionar Pedido
+                        <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<span ng-include="'angular/templates/pedidos/adicionarPedidos.html'"></span>
+
+
+
+

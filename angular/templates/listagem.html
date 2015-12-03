@@ -1,0 +1,39 @@
+<div class="content-wrapper" ng-controller="DatatablesCtrl">
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <div class="col-md-6">
+                            <h3 class="box-title">Lista de Pedidos</h3>
+                        </div>
+                        <button type="submit" data-toggle="modal" data-target="#adicionarPedido"
+                                class="btn btn-success">Adicionar Pedido
+                        </button>
+                    </div>
+                    <div class="box-body">
+                        <table datatable sAjaxSource="http://localhost/angular/persons/all"
+                               sAjaxDataProp="" class="table table-bordered table-striped table-responsive">
+                            <thead>
+                            <tr id="lista">
+                                <th data-mdata="id" data-sclass="highlight-red">ID</th>
+                                <th data-mdata="first_name">Name</th>
+                                <th data-mdata="last_name">Phone</th>
+                                <th data-mdata="" data-bvisible="false">About me</th>
+                                <th data-mdata="email">Email</th>
+                                <th data-mdata="age">Age</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div ng-include="'angular/templates/pedidos/adicionarPedidos.html'"></div>
+
+
+
+

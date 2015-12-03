@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="listaTelefonica">
+<head>
+    <meta charset="UTF-8">
+    <title>Aprender Angular</title>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="lib/style.css">
+    <script src="../../lib/angular.js"></script>
+    <script src="../../controller/listaController.js"></script>
+</head>
+<body ng-controller="listaControler">
+<div class="jumbotron">
+    <h3>{{app}}</h3>
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>Nome</th>
+            <th>Telefone</th>
+        </tr>
+        <tr ng-repeat="contato in contatos" ng-class="{selecionado: contato.selecionado}">
+            <td><input type="checkbox" ng-model="contato.selecionado"></td>
+            <td>{{contato.nome}}</td>
+            <td>{{contato.telefone}}</td>
+        </tr>
+    </table>
+    <input class="form-control" type="text" ng-model="contato.nome">
+    <input class="form-control" type="text" ng-model="contato.telefone">
+    <button ng-click="adicionarContato(contato)" ng-disabled="!contato.nome" class="btn btn-success">Adicionar</button>
+    <button ng-click="apagarContatos(contatos)" ng-disabled = "!isSelecionados(contatos)" class="btn btn-danger">apagar contatos</button>
+
+
+</div>
+
+</body>
+</html>

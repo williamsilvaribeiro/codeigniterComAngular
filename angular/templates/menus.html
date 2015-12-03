@@ -1,0 +1,13 @@
+<aside class="main-sidebar" ng-controller="demandasController">
+    <section class="sidebar">
+        <ul class="sidebar-menu" >
+            <li class="header">Menu</li>
+            <li class="active" ng-repeat="menusi in menusSistema">
+                <a href="#{{menusi.pagina}}"><i class="fa fa-calendar"></i><span>{{menusi.nome}}</span></a>
+            </li>
+        </ul>
+    </section>
+</aside>
+
+
+
